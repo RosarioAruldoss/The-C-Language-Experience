@@ -1,0 +1,17 @@
+\\ The first program that anyone will write most probably is the Hello World program in C Language. Here's the program
+
+#include <stdio.h>
+int main (void)
+
+{
+    printf("hello world\n");
+}
+
+\\The stdio.h (Standard Input Output Header) is one of the most fundamental header files in C. 
+\\It provides functionalities for input and output (I/O) operations such as reading from the keyboard and writing to the console.
+
+\\printf()	Prints formatted output to the console.
+
+int → The function returns an integer value (typically 0 for success).
+main → The function's name (the program's starting point).
+void → It means that the function takes no arguments.
