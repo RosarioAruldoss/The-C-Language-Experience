@@ -15,3 +15,12 @@ int main (void)
 int → The function returns an integer value (typically 0 for success).
 main → The function's name (the program's starting point).
 void → It means that the function takes no arguments.
+
+Here are some of the data Types:
+Data Types
+int - %i
+float - %f
+bool - %i
+char - %c
+string - %s
+
