@@ -48,3 +48,57 @@ void print_row (int b)
     printf("\n"); //making a new line to make the bricks print in multiple rows as per the user input (a)
 }
 //when the for loop is used in the first function, the result we get is bricks printed for the user input (a) for the same number of rows.
+//  Thus we get struck. We think that the only varibale that can be changed is the user input . But that too kinf of gives us a brick wall
+// intead of a pyramid. In the next iteration in order to make the code more dynamic, we will use the variable that changes with every for
+// loop execution and that is - 'i'.
+*/
+#include <stdio.h>
+#include <cs50.h>
+void print_row (int b);
+int main (void)
+{
+    //getting the input from the user.
+    int a = get_int("Say the no of rows you want the brick pyramid : ");
+    //instead of using the print_row function, we can use the for loop to use the function as per the user input (a)
+    for(int i=0; i<=a; i++) // making it <= makes the program to print the no of times as the user input.
+    {
+        print_row(i); //changing the integer-user input (a) to i variable.
+    }
+}
+
+void print_row (int b)
+{
+    for(int i = 0; i<b; i++)
+    {
+    printf("#");
+    }
+    printf("\n"); //making a new line to make the bricks print in multiple rows as per the user input (a)
+}
+
+There is one more way to do the same:
+
+#include <stdio.h>
+#include <cs50.h>
+void print_row (int b);
+int main (void)
+{
+    //getting the input from the user.
+    int a = get_int("Say the no of rows you want the brick pyramid : ");
+    //instead of using the print_row function, we can use the for loop to use the function as per the user input (a)
+    for(int i=0; i<a; i++) // making it <= makes the program to print the no of times as the user input.
+    {
+        print_row(i+1); //changing the integer-user input (a) to i variable.
+        //adding +1 will make the program execute brick printing in row 0 itself once. Thus when we get to row 5 we have 4brick+1brick
+    }
+}
+
+void print_row (int b)
+{
+    for(int i = 0; i<b; i++)
+    {
+    printf("#");
+    }
+    printf("\n"); //making a new line to make the bricks print in multiple rows as per the user input (a)
+}
+
+
