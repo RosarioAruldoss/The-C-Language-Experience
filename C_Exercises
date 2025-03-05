@@ -1,1 +1,8 @@
 Hey, in here we are trying to do an exercise in which, we will be building a pyramid using the '#' bricks. For starters, the bricks can be aligned from left to right as that is considered easy.
+
+we are trying to simplify the task in hand. Lets see if we can incorporate it with simple steps.
+
+Step 1 : Get the input from the user for no of rows
+Step 2 : Print bricks - '#' with one brick on row 1 till the no of bricks as the input from the user on the n'th row.
+
+
