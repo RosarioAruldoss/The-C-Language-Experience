@@ -101,4 +101,36 @@ void print_row (int b)
     printf("\n"); //making a new line to make the bricks print in multiple rows as per the user input (a)
 }
 
+//DO-WHILE LOOP (to avoid negative numbers)
+
+#include <stdio.h>
+#include <cs50.h>
+void print_row (int b);
+int main (void)
+{
+    //declare the integer
+    int a;
+    // Using a do-while loop
+    do
+    {
+        a = get_int("Say the no of rows you want the brick pyramid : ");
+    }
+    while (a<=0);
+    //instead of using the print_row function, we can use the for loop to use the function as per the user input (a)
+    for(int i=0; i<a; i++) // making it <= makes the program to print the no of times as the user input.
+    {
+        print_row(i+1); //changing the integer-user input (a) to i variable.
+        //adding +1 will make the program execute brick printing in row 0 itself once. Thus when we get to row 5 we have 4brick+1brick
+    }
+}
+
+void print_row (int b)
+{
+    for(int i = 0; i<b; i++)
+    {
+    printf("#");
+    }
+    printf("\n"); //making a new line to make the bricks print in multiple rows as per the user input (a)
+}
+//the program runs good
 
