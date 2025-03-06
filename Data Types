@@ -1,0 +1,68 @@
+Data Types in C**
+Data types define the **type of data** a variable can store in memory. In other languages we can just use the
+data type. however in C we have to declare the data type.
+Data types are categorized into:  
+1. **Primary (Basic) Data Types**  
+2. **Derived Data Types**  
+3. **User-Defined Data Types**  
+
+---
+
+** Primary (Basic) Data Types**  
+These are the fundamental data types in C.  
+
+| Data Type | Memory Size | Value Range (approx) | Use Cases |
+|-----------|------------|---------------------|-----------|
+| **int**   | 4 bytes    | -2,147,483,648 to 2,147,483,647 | Counting objects, loops, flags |
+| **char**  | 1 byte     | -128 to 127 (ASCII) | Storing characters (`'A'`, `'9'`, `'$'`) | 8bits | Single value storage|
+| **float** | 4 bytes    | ~6 decimal precision | Decimal calculations (e.g., 3.14) |
+| **double**| 8 bytes    | ~15 decimal precision | High-precision calculations (e.g., scientific computations) |
+| **void**  | 0 bytes    | No value | Used for functions that return nothing | Void is not a data type its just a type|
+| **bool**  | 0 bytes    | 2 values (True and False) | Used for storing boolian values - two diff distinct values|
+
+** Qualifiers**
+-Short
+-Long
+-Unsigned              
+
+** Derived Data Types**  
+Built from basic data types.  
+
+| Data Type | Description | Use Cases |
+|-----------|-------------|------------|
+| **Array** | Collection of same data type elements | Storing multiple values (e.g., marks, names) |
+| **Pointer** | Stores the memory address of another variable | Dynamic memory allocation, linked lists |
+| **Function** | Block of reusable code | Modular programming, recursion |
+
+---
+
+** User-Defined Data Types**  
+You create them for **better structuring of data**.  
+
+| Data Type | Description | Use Cases |
+|-----------|-------------|------------|
+| **struct** | Groups multiple variables of different types | Storing details of a student (name, age, marks) |
+| **union** | Similar to struct but shares memory | Memory-efficient data storage |
+| **enum** | Named integer constants | Representing states (`SUNDAY`, `MONDAY`) |
+
+---
+
+** Use Cases in Real-World Programming**
+- **`int`** → Counters, IDs, indexes in loops.  
+- **`char`** → Single characters, file handling, text manipulation.  
+- **`float/double`** → Banking, physics simulations, machine learning.  
+- **`array`** → Storing multiple values like sensor data, game leaderboards.  
+- **`pointer`** → Memory management, data structures (linked lists, trees).  
+- **`struct`** → Organizing complex data (student records, employee info).  
+
+---
+
+** Pro Tip (Performance Optimization)**
+- **Use `float` instead of `double`** for faster computations (unless high precision is needed).  
+- **Prefer `unsigned int`** when negative values are not needed (e.g., age, sizes).  Unsigned is a data qualifier.
+- **Use `struct` for clarity**, but **union** for memory efficiency when only one value is used at a time.  
+
+** Using a Data type and a Variable
+1. int number; --> Declaration
+2. number = 17; --> assignment
+3. int number = 17; --> initialization.
