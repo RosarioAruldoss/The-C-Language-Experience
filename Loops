@@ -1,0 +1,131 @@
+# Loops in C
+
+Loops in C are used to execute a block of code multiple times based on a condition. They help reduce redundancy and make the code more efficient. C provides three types of loops:
+
+1. **for loop**
+2. **while loop**
+3. **do-while loop**
+
+## 1. for Loop
+The `for` loop is used when the number of iterations is known beforehand. It consists of three parts:
+- **Initialization**: Initializes the loop control variable.
+- **Condition**: Evaluated before each iteration; loop continues if true.
+- **Update**: Modifies the loop control variable after each iteration.
+
+### Syntax:
+```c
+for (initialization; condition; update) {
+    // Code to execute
+}
+```
+
+### Example:
+```c
+#include <stdio.h>
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        printf("Iteration %d\n", i);
+    }
+    return 0;
+}
+```
+
+## 2. while Loop
+The `while` loop is used when the number of iterations is unknown but depends on a condition. The loop executes as long as the condition remains true.
+
+### Syntax:
+```c
+while (condition) {
+    // Code to execute
+}
+```
+
+### Example:
+```c
+#include <stdio.h>
+int main() {
+    int i = 1;
+    while (i <= 5) {
+        printf("Iteration %d\n", i);
+        i++;
+    }
+    return 0;
+}
+```
+
+## 3. do-while Loop
+The `do-while` loop is similar to the `while` loop but guarantees at least one execution of the loop body, even if the condition is false initially.
+
+### Syntax:
+```c
+do {
+    // Code to execute
+} while (condition);
+```
+
+### Example:
+```c
+#include <stdio.h>
+int main() {
+    int i = 1;
+    do {
+        printf("Iteration %d\n", i);
+        i++;
+    } while (i <= 5);
+    return 0;
+}
+```
+
+## 4. Nested Loops
+A loop inside another loop is called a nested loop. This is useful for working with multi-dimensional data.
+
+### Example:
+```c
+#include <stdio.h>
+int main() {
+    for (int i = 1; i <= 3; i++) {
+        for (int j = 1; j <= 3; j++) {
+            printf("(%d, %d) ", i, j);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+## 5. Loop Control Statements
+C provides special statements to control loop execution:
+- **break**: Exits the loop immediately.
+- **continue**: Skips the current iteration and moves to the next.
+
+### Example of `break`:
+```c
+#include <stdio.h>
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        if (i == 3) {
+            break;
+        }
+        printf("Iteration %d\n", i);
+    }
+    return 0;
+}
+```
+
+### Example of `continue`:
+```c
+#include <stdio.h>
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        if (i == 3) {
+            continue;
+        }
+        printf("Iteration %d\n", i);
+    }
+    return 0;
+}
+```
+
+## Conclusion
+Loops are a fundamental concept in C that allow for efficient iteration over code blocks. The choice of loop (`for`, `while`, or `do-while`) depends on the use case, and loop control statements like `break` and `continue` offer additional flexibility.
+
