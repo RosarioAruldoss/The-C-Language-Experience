@@ -1,0 +1,45 @@
+Initially we are going through the pragrams that were practiced after scratch programming. 
+With that in mind we are exploring the basic way how the source code we compile is converted to machine code, comupters could understand.
+We named the file hello.c for easier compilation.
+
+/*NO:1
+//Hello world Program
+
+#include <stdio.h>
+#include <cs50.h>
+int main (void)
+{
+    printf("Hello World\n");
+}
+
+With the command [clang hello.c] we are able to create a file a.out which is also able to give an output*/
+
+
+/*
+//NO:2
+//Getting a string program.
+#include <stdio.h>
+#include <cs50.h>
+int main (void)
+{
+    string name = get_string("What is your name?\n");
+    printf("Hello %s, Do well. Congragulations!\n",name);
+}
+Its like a revision */
+
+
+
+//Meow Program
+#include <stdio.h>
+#include <cs50.h>
+void meow (void); //calling the function
+int main (void)
+#define times 3 //using the define function for the first time
+{
+    for (int i=0;i<times;i++)
+    meow();
+}
+void meow (void)
+{
+    printf("meow\n");
+}
