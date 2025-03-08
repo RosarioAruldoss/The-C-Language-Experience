@@ -43,3 +43,15 @@ void meow (void)
 {
     printf("meow\n");
 }
+
+Basically the steps involved are 
+1. Preprocessing
+2. Compiling
+3. Assembly
+4. Linking
+
+
+The debugging 
+    it is said that the term debugging itself came from the Harvard Mark 1 computer. There was literally a bug- a moth inside the computer that was sabbotaging the computer's
+operations. The person who built the computer found the moth and had pasted the moth in his notebook leading to the origin of he word - debugging.
+
