@@ -51,7 +51,41 @@ Basically the steps involved are
 4. Linking
 
 
-The debugging 
-    it is said that the term debugging itself came from the Harvard Mark 1 computer. There was literally a bug- a moth inside the computer that was sabbotaging the computer's
-operations. The person who built the computer found the moth and had pasted the moth in his notebook leading to the origin of he word - debugging.
+The debugging :
+
+    It is said that the term debugging came from the Harvard Mark 1 computer. There was a bug- a moth inside the computer that was sabotaging the computer's
+operations. The person who built the computer found the moth and pasted the moth in his notebook leading to the origin of the word - debugging.
+    One of the debuggers we are gonna use is debug50. In addition, we cannot use the printf statement very frequently. When used frequently, it may lead to errors.
+
+    In this case we can use the debug50 ./debug and run. Some random things will happen and you will be able to see what the program does with the help of the step over at the top and 
+pause option by the left - a red dot. By doing a step by step debugging we will be able to identify the error.
+
+for example:
+
+#include <cs50.h>
+#include <stdio.h>
+
+void print_height(int height);
+int main(void)
+{
+    int h = get_int("Height : ");
+    print_height(h);
+}
+
+void print_height(int height)
+{
+    for (int i = 0; i <= height; i++)
+    {
+        printf("#\n");
+    }
+}
+
+/*
+used to practice how to use the debugger
+debug50 ./bug
+mark the pause.
+use stepover
+use play
+we can observe the path at the human pace.
+*/
 
