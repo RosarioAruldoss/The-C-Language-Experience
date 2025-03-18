@@ -93,4 +93,11 @@ we can observe the path at the human pace.
 
 Memory Allocation
 
-All the 0s and 1s with the respective addressess are stored in the hardware of the computer.
+All the 0s and 1s with the respective addresses are stored in the computer's hardware.
+
+> CLANG:
+        Clang is a program that runs in the background. make command makes the source code to be processed in the background.
+        > terminal command: clang -o hello hello.c  : Clang output hello while compiling hello.c
+        > terminal command: clang -o hello hello.c -lcs50: when running a program directly with the Clang compiler, it doesn't know how to use the library. 
+                                                             So, we have to specify the compiler to the library by mentioning it.
+
