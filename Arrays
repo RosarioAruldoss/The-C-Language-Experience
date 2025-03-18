@@ -53,7 +53,7 @@ Basically the steps involved are
 
 The debugging :
 
-    It is said that the term debugging came from the Harvard Mark 1 computer. There was a bug- a moth inside the computer that was sabotaging the computer's
+    It is said that the term debugging came from the Harvard Mark 1 computer. There was a bug- a moth inside the Mark-2 computer that was sabotaging the computer's
 operations. The person who built the computer found the moth and pasted the moth in his notebook leading to the origin of the word - debugging.
     One of the debuggers we are gonna use is debug50. In addition, we cannot use the printf statement very frequently. When used frequently, it may lead to errors.
 
@@ -100,4 +100,37 @@ All the 0s and 1s with the respective addresses are stored in the computer's har
         > terminal command: clang -o hello hello.c  : Clang output hello while compiling hello.c
         > terminal command: clang -o hello hello.c -lcs50: when running a program directly with the Clang compiler, it doesn't know how to use the library. 
                                                              So, we have to specify the compiler to the library by mentioning it.
+
+Let's now get back to debugging.
+
+note: we can use printf to debug your code
+for example in the code--
+
+#include <cs50.h>
+#include <stdio.h>
+
+void print_height(int height); // declaring the function
+int main(void)
+{
+    int h = get_int("Height : ");
+    print_height(h);
+}
+
+void print_height(int height)
+{
+    for (int i = 0; i < height; i++)
+    {
+        printf("#\n");
+    }
+}
+
+step 1: we use the (terminal command) 'debug50 ./buggy' 
+step 2: fix the line break point.
+step 3: run the program
+step 4: step over again and again and see how the code operates.
+
+This technique will enable us to view the program being executed in a normal person speed rather than the computer execution speed.
+This is one of the methods of debugging a program.
+
+
 
