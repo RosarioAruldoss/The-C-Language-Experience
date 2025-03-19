@@ -132,5 +132,17 @@ step 4: step over again and again and see how the code operates.
 This technique will enable us to view the program being executed in a normal person speed rather than the computer execution speed.
 This is one of the methods of debugging a program.
 
+DATA TYPES:
+
+    A computer usually treats the numbers or text in the form of 0s and 1s. However, if a color is represented in the Adobe Photo Shop, it is also represented 
+as 0s and 1s. The programmers in adobe have specified the program to interpret the colours as machine codes. That is one data type.
+    C program generally has the following data types
+        > bool - 1 byte
+        > int - 4 bytes
+        > long - much bigger integer - 8 bytes
+        > float - real numbers with integers - 4 bytes
+        > double - 8 bytes
+        > char - 1 byte
+        > string - ? bytes
 
 
