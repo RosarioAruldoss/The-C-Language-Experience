@@ -101,3 +101,196 @@ All the 0s and 1s with the respective addresses are stored in the computer's har
         > terminal command: clang -o hello hello.c -lcs50: when running a program directly with the Clang compiler, it doesn't know how to use the library. 
                                                              So, we have to specify the compiler to the library by mentioning it.
 
+/*This is the first program in Arrays
+we are to enter the scores of 3 subjects*/
+
+/*
+
+>> Printing average of scores: <<
+
+#include <stdio.h>
+#include <cs50.h>
+
+int main (void)
+{
+    int score1 = 80;
+    int score2 = 70;
+    int score3 = 90;
+//now let's try to print the average.
+    printf("average: %i\n",(score1 + score2 + score3)/3);
+}
+*/
+/*
+>> Printing average of scores with float: <<
+
+#include <stdio.h>
+#include <cs50.h>
+
+int main (void)
+{
+    int score1 = 80;
+    int score2 = 70;
+    int score3 = 90;
+//  printf("average: %f\n",(score1 + score2 + score3)/3.0); //let's use float this time. As the
+scores are int, it will show an error printf("average: %f\n",(score1 + score2 + score3)/(float)3.0);
+//(is an alternate option). In order to overcome that we make 3 - 3.0
+}
+Instead of assigning data type for each and every score, what if we could just do it one and it will
+generate that many number Arrays can be made use in this case
+
+An array is a sequence of numbers back to back in memory.
+
+SYNTAX : [data type] [name of the variable] [[no of occurance]];
+        int score [3];
+
+*/
+
+/*
+>> Indexing into the Array with specific loaction tags and same variable <<
+
+#include <stdio.h>
+#include <cs50.h>
+
+int main (void)
+{
+    int score[3]; //array syntax
+    score[0] = 80;
+    score[1] = 70;
+    score[2] = 90;
+    printf("average: %f\n",(score[0]+score[1]+score[2])/3.0);
+}
+//Now there is only one variable. Instead of three.
+
+*/
+
+/*
+//Lets optimze it even further with array concept
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main (void)
+{
+    int score [3];
+    for (int i = 0; i < 3; i++)
+    {
+        score[i] = get_int("Score %i: ",i+1);
+    }
+
+    printf("average: %f\n",(score[0] + score[1] + score[2])/3.0);
+}
+//this code is optimised with for loop. however there is still the number 3 everywhere on the code.
+//Optimising it even further will take us to :
+
+// to get rid of the 3 we are going to use contant interger function.
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main (void)
+{
+    const int N = 3; //capitalization is done to show that this variable represents a constant
+value. int score [N]; for (int i = 0; i < N; i++)
+    {
+        score[i] = get_int("Score %i: ",i+1);
+    }
+
+    printf("average: %f\n",(score[0] + score[1] + score[2])/ (float)N);
+}
+*/
+
+/*
+#include <cs50.h>
+#include <stdio.h>
+//declaring the constant int outside for convenience
+const int N = 3;
+
+//prototype
+float average (int length, int array[]);
+
+int main (void)
+{
+     //capitalization is done to show that this variable represents a constant value.
+    int score [N];
+    for (int i = 0; i < N; i++)
+    {
+        score[i] = get_int("Score %i: ",i+1);
+    }
+
+    printf("average: %f\n",average(N, score)); //[doubt] why N and score are mentioned?
+    //[ans] average is a helper function. It takes 2 values. one is N cause it's got to know how
+many numbers. two is the array itself.
+}
+
+float average (int length, int array[])
+{
+    int sum = 0;
+    for (int i = 0; i < length; i++)
+    {
+        sum += array[i];
+    }
+    return (sum / (float)length);
+}
+*/
+// Getting input from the user
+
+/*
+#include <cs50.h>
+#include <stdio.h>
+int average(int length, int array[]);
+
+int main(void)
+{
+    int N = 0;
+    int score[N];
+    // getting the number of inputs from user
+    N = get_int("No. of Scores: ");
+    for (int i = 0; i < N; i++)
+    {
+        score[i] = get_int("score %i: ", i + 1);
+    }
+    printf("average: %i", average(N, score));
+}
+
+int average(int length, int array[])
+{
+    int sum = 0;                     // creating a variable sum
+    for (int i = 0; i < length; i++) // iteration over lenth of that array
+    {
+        sum += array[i];
+    }
+    return sum / length;
+}
+The whole code encounters errors due to misplaced declarations.
+
+Lets retry correcting the code:
+*/
+
+#include <cs50.h>
+#include <stdio.h>
+//prototype
+float average (int length, int array[]);
+
+int main (void)
+{
+    int N = get_int("No. of scores: ");
+    int score[N];
+    for(int i = 0; i < N; i++)
+    {
+        score[i] = get_int("Score %i: ",i+1);
+    }
+    printf("Average = %.3f\n", average (N,score));
+}
+float average (int len, int array[])
+{
+    int sum = 0;
+    for (int i = 0; i<len; i++)
+    {
+        sum += array[i];
+    }
+    return (float)sum/len;
+}
+//Finally we got the program right.
+
+
+
