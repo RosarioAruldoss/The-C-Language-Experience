@@ -291,8 +291,9 @@ float average (int len, int array[])
     return (float)sum/len;
 }
 
-We are creating a program called "length.c" 
-
+// Let's find the length of the string
+//We are creating a program called "length.c"
+/*
 #include <stdio.h>
 #include <cs50.h>
 int main (void)
@@ -307,9 +308,54 @@ int main (void)
     }
     printf("%i\n",n);
 }
+*/
 
 
-//Finally we got the program right.
+//Let's calculate the string length with the help of a function
+/*
+#include <cs50.h>
+#include<stdio.h>
+//declare the fuction:
+int string_length (string s);
+int main (void)
+{
+    string name = get_string("Name: ");
+    int length = string_length(name);
+    printf("%i\n",length);
+}
+//the function
+int string_length (string s)
+{
+    int n = 0;
+    while (s[n] != '\0')
+    {
+        n++;
+    }
+    return n;
+}
+*/
+
+/*
+In the c programming there is a separate library for strings. Thus when strings are involved we can use the
+Library : "string.h"
+(Source for reference : manual.cs50.io)
+
+So instead of using the 'string_length' function, we can use the function in the string.h library called
+- "strlen"
+*/
+
+//The simplified code is as follows:
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main (void)
+{
+    string length = get_string("Name: ");
+    int l = strlen(length);
+    printf("Length : %i\n", l);
+}
+//Now the code is more simplified with the use of a library.
 
 
 
