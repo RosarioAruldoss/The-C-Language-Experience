@@ -290,6 +290,25 @@ float average (int len, int array[])
     }
     return (float)sum/len;
 }
+
+We are creating a program called "length.c" 
+
+#include <stdio.h>
+#include <cs50.h>
+int main (void)
+{
+    string length = get_string("Name:");
+
+    //initiating a integer to calculate the length
+    int n = 0;
+    while (length[n] != '\0')
+    {
+        n++;
+    }
+    printf("%i\n",n);
+}
+
+
 //Finally we got the program right.
 
 
