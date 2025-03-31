@@ -378,3 +378,209 @@ int main (void)
 }
 /*in this program we can see that the string length is always going to be the same in line 14, however we have used it*/
 
+
+
+****************************************--> uppercase.c <--************************************************
+
+// This code is intended to change the lowercase letters to upper case letters
+
+/*
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main (void)
+{
+    string s = get_string("Before: ");
+    printf("After:  ");
+    //we are going to change if there are any lower case to upper case
+    for (int i = 0, n = strlen(s); i < n; i++)
+    {
+        if (s[i] >= 'a'&& s[i] <= 'z') //in this condition we are including the lower case alphabets
+        //if (s[i] >= 97 && s[i] = 122)
+        {
+            //change s[i] to upper case
+            // else print s[i]
+            printf("%c",s[i]-32);
+        }
+        else
+        {
+            printf("%c",s[i]);
+        }
+    }
+    printf("\n");
+}
+*/
+
+/* what if we use the letters itself from ASCII to denote the standard difference insteaf of using
+ * -32 */
+
+/*
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main (void)
+{
+    string s = get_string("Before: ");
+    printf("After:  ");
+    for (int i = 0, n = strlen(s); i < n; i++)
+    {
+        if (s[i] >= 'a'&& s[i] <= 'z')
+        {
+            printf("%c",s[i] - ('a'-'A')); //here we used the characters to denote the difference
+        }
+        else
+        {
+            printf("%c",s[i]);
+        }
+    }
+    printf("\n");
+}
+// the program works fine
+*/
+
+// We are using the ctype.h library
+/* Why are we using the ctype library?
+    Answer: The ctype library has the function to change from upper case to lower case and lower
+   case to upper case*/
+
+/*
+#include <cs50.h>
+#include <ctype.h> //we are including the ctype library
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    string s = get_string("Before: ");
+    printf("After:  ");
+    for (int i = 0, n = strlen(s); i < n; i++)
+    {
+        if (s[i] >= 'a' && s[i] <= 'z')
+        {
+            printf("%c", toupper(s[i])); // here we change the code from
+            //printf("%c",s[i] - ('a'-'A'));
+            //to
+            //printf("%c", toupper(s[i]);j
+        }
+        else
+        {
+            printf("%c", s[i]);
+        }
+    }
+    printf("\n");
+}
+*/
+
+
+
+
+/*In the following code we can reduce the consditionals like else and if as the work of that conditional is done by the 'toupper'
+function*/
+
+#include <cs50.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    string s = get_string("Before: ");
+    printf("After:  ");
+    for (int i = 0, n = strlen(s); i < n; i++)
+    {
+        printf("%c", toupper(s[i])); // here we change the code from
+    }
+    printf("\n");
+}
+
+//The code is now ever more simplified
+
+*********************************************--> Using the arguments as input function: <--*****************************************
+
+/*
+Normally in the main function, there will be no input from the user. However if you want the input to the main function can be given as
+argument input
+Let's consider the arrays here
+
+we normally use
+    int main (void)
+
+Let's now see how we use the input with the arguments
+*/
+/*
+#include <stdio.h>
+#include <cs50.h>
+
+int main (void)
+{
+    string answer = get_string("What's your name?\n");
+    printf("hello, %s\n",answer);
+}
+*/
+//This is the old way of doing it. Now lets see the input with the CLI x with input arguments
+/*
+#include <stdio.h>
+#include <cs50.h>
+
+int main (int argc, string argv[]) //argument vector array
+{
+    printf("hello, %s\n", argv[0]);
+}
+*/
+// Output: hello, ./greet
+//even if we use the cli - ./greet Rosario, we get the same output
+//so we will use the argv[1] instead of argv[0], because thats where the human exchange starts
+
+/*
+#include <stdio.h>
+#include <cs50.h>
+
+int main (int argc, string argv[])
+{
+    printf("hello, %s\n", argv[1]); //use the argv[1] instead of argv[0]
+}
+*/
+
+// the program works good
+// if we gforget to give a name, the output will be - hello, (null)
+
+// Now let's give the condition if the name is given the program has to print, else it can print hello world
+/*
+#include <stdio.h>
+#include <cs50.h>
+
+int main (int argc, string argv[]) //argument Count
+{
+    if (argc == 2)
+    {
+        printf("hello, %s\n",argv[1]);
+    }
+    else
+    {
+        printf("hello, world!\n");
+    }
+}
+*/
+// using different variables to understand
+
+
+#include <stdio.h>
+#include <cs50.h>
+
+int main (int a, string s[]) //argument Count
+{
+    if (a == 2)
+    {
+        printf("hello, %s\n",s[1]);
+    }
+    else
+    {
+        printf("hello, world!\n");
+    }
+}
+//The program works fine
+
+
+
