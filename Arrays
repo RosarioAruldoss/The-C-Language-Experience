@@ -357,5 +357,24 @@ int main (void)
 }
 //Now the code is more simplified with the use of a library.
 
+// let's just play around with the functions and learn even more:
+/*
+Before getting into the coding part, lets just know that in the ASCII keyboard format,
+*/
 
+#include <stdio.h>
+#include <cs50.h>
+#include <string.h>
+
+int main (void)
+{
+    string s = get_string("Input: ");
+    printf("Output: ");
+    for (int i = 0; i < strlen(s); i++) //setting the rule for printing one by one character.
+    {
+        printf("%c",s[i]); //printing the character as per the array.
+    }
+    printf("\n"); //\n is used finally as not to break the line inbetween.
+}
+/*in this program we can see that the string length is always going to be the same in line 14, however we have used it*/
 
