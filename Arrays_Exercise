@@ -1,1 +1,108 @@
+/*
+#include <cs50.h>
+#include <stdio.h>
+
+int main (void)
+{
+    int n=2;
+
+    //declare an array
+    int numbers[5];
+
+    //populate an array
+    numbers[0] = 1;
+    numbers[1] = numbers[0]*n;
+    numbers[2] = numbers[1]*n;
+    numbers[3] = numbers[2]*n;
+    numbers[4] = numbers[3]*n;
+
+    //Alternative:
+    //code : int numbers[5] = {1,2,4,8,16};
+
+
+    //print out the values one by one
+    for (int i = 0; i<5; i++)
+    {
+        printf("The %i number is: %i\n",i+1,numbers[i]);
+    }
+}
+*/
+
+//Is there any way to make it better? Y
+
+/*
+#include <cs50.h>
+#include <stdio.h>
+
+int main (void)
+{
+    int n=2;
+
+    //declare an array
+    int numbers[5];
+    numbers[0]=1; //without this step the system will take a previous stored value.
+
+    //populate an array using for loop
+    for (int i = 1; i<5; i++)
+    {
+        numbers[i]=numbers[i-1]*n;
+    }
+
+    //print out the values one by one
+    for (int i = 0; i<5; i++)
+    {
+        printf("The %i number is: %i\n",i+1,numbers[i]);
+    }
+}
+*/
+
+//My alternative approach:
+/*
+#include <cs50.h>
+#include <stdio.h>
+
+int main (void)
+{
+    int n=2;
+
+    //declare an array
+    int numbers[5];
+    numbers[0]=1; //without this step the system will take a previous stored value.
+
+    //populate an array using for loop
+    for (int i = 1; i<6; i++)
+    {
+        numbers[i]=numbers[i-1]*n;
+        printf("The %i number is: %i\n",i,numbers[i-1]); //populating the printf here
+    }
+}
+*/
+
+// replacing the declared number:
+
+#include <cs50.h>
+#include <stdio.h>
+
+int const size = 5; //declaring the size upfront
+
+int main (void)
+{
+    int n=2;
+
+    //declare an array
+    int numbers[size];
+    numbers[0]=1; //without this step the system will take a previous stored value.
+
+    //populate an array using for loop
+    for (int i = 1; i<size; i++)
+    {
+        numbers[i]=numbers[i-1]*n;
+    }
+
+    //print out the values one by one
+    for (int i = 0; i<size; i++)
+    {
+        printf("The %i number is: %i\n",i+1,numbers[i]);
+    }
+}
 
